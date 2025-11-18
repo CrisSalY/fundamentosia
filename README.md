@@ -1,5 +1,5 @@
 # FundamentosIA
-Proyecto final del módulo.
+Proyecto final del módulo. https://fundamentosia.streamlit.app/
 Esta aplicación permite detectar enfermedades en hojas de rosa usando el modelo YOLO y Streamlit.
 
 ## Características
