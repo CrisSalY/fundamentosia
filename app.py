@@ -130,10 +130,11 @@ with col2_1:
                 counts = Counter(detected_classes)
                 for cls, count in counts.items():
                     st.write(f"- {cls}: {count} veces")
+                question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
+                st.write(preguntar(question))
             else:
                 st.write("No se detectaron enfermedades en las rosas.")
-            question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
-            st.write(preguntar(question))
+            
         
 #video
 st.subheader("Detecta enfermedades en un video")
@@ -199,9 +200,10 @@ with col2:
                 counts = Counter(detected_classes)
                 for cls, count in counts.items():
                     st.write(f"- {cls}: {count} veces")
+                question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
+                st.write(preguntar(question))
             else:
-                st.write("No se detectaron enfermedades en las rosas.")
-            question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
-            st.write(preguntar(question))
+                st.write("No se detectaron enfermedades en las rosas.") 
+
 
 
