@@ -9,7 +9,7 @@ import pandas as pd
 from openai import OpenAI 
 from collections import Counter
 
-api_key = st.secrets["API_KEY"]
+api_key = st.secrets["openai"]["api_key"]
 
 #config  
 page_bg_color = "#f0f8ff"   
@@ -203,4 +203,5 @@ with col2:
                 st.write("No se detectaron enfermedades en las rosas.")
             question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
             st.write(preguntar(question))
+
 
