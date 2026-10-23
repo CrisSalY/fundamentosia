@@ -7,4 +7,3 @@ pandas
 torch
 torchvision
 openai
-cv2
