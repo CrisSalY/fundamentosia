@@ -148,15 +148,16 @@ with col1:
         st.video(temp_video.name,width=350,muted=True)
 with col2:
     if uploaded_video is not None:          
-        conf_threshold = st.slider(
-            "Nivel de confianza",  # Etiqueta
-            min_value=0.0,         # Valor mínimo
-            max_value=1.0,         # Valor máximo
-            value=0.5,             # Valor inicial
-            step=0.01,              # Incremento
-            width=350,
-            key='video'
-        )  
+        conf_threshold= 0.5
+        #conf_threshold = st.slider(
+        #    "Nivel de confianza",  # Etiqueta
+        #    min_value=0.0,         # Valor mínimo
+        #    max_value=1.0,         # Valor máximo
+        #    value=0.5,             # Valor inicial
+        #    step=0.01,              # Incremento
+        #    width=350,
+        #    key='video'
+        #)  
         if st.button("Procesar video"):     
             st.write(f"Procesando video con confianza: {conf_threshold}")
             cap = cv2.VideoCapture(temp_video.name)
