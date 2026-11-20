@@ -105,14 +105,15 @@ with col2_1:
     with col21:
         # Barra deslizante para la confianza
         if uploaded_image is not None: 
-            conf_threshold = st.slider(
-            "Nivel de confianza",  # Etiqueta
-            min_value=0.0,         # Valor mínimo
-            max_value=1.0,         # Valor máximo
-            value=0.5,             # Valor inicial
-            step=0.01,              # Incremento
-            width=350
-            )
+            conf_threshold=0.5
+            #conf_threshold = st.slider(
+            #"Nivel de confianza",  # Etiqueta
+            #min_value=0.0,         # Valor mínimo
+            #max_value=1.0,         # Valor máximo
+            #value=0.5,             # Valor inicial
+            #step=0.01,              # Incremento
+            #width=350
+            #)
             results = model.predict(image, imgsz=640, conf=conf_threshold)
             for box in results[0].boxes:
                         cls_id = int(box.cls)
@@ -126,13 +127,13 @@ with col2_1:
         if uploaded_image is not None:  
             st.download_button("Descargar imagen procesada", data=open(temp_img.name, "rb"), file_name="imagen_detectada.jpg")
             st.write("Enfermedades detectadas en la foto:")
-            if detected_classes:
-                counts = Counter(detected_classes)
-                for cls, count in counts.items():
-                    st.write(f"- {cls}: {count} veces")
-                question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
-                st.write(preguntar(question))
-            else:
+            #if detected_classes:
+                #counts = Counter(detected_classes)
+                #for cls, count in counts.items():
+                #    st.write(f"- {cls}: {count} veces")
+                #question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
+                #st.write(preguntar(question))
+            if not detected_classes:
                 st.write("No se detectaron enfermedades en las rosas.")
             
         
@@ -196,13 +197,13 @@ with col2:
                     file_name="video_detectado.mp4",
                     mime="video/mp4") 
             st.write("Enfermedades detectadas en el video:")
-            if detected_classes:
-                counts = Counter(detected_classes)
-                for cls, count in counts.items():
-                    st.write(f"- {cls}: {count} veces")
-                question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
-                st.write(preguntar(question))
-            else:
+            #if detected_classes:
+            #    counts = Counter(detected_classes)
+            #    for cls, count in counts.items():
+            #        st.write(f"- {cls}: {count} veces")
+            #    question = 'tengo esta planta con las enfermedades:'+', '.join(list(set(detected_classes)))+'; en un cultivo a gran escala. Que debo hacer para mitigar esta enfermedad?' 
+            #    st.write(preguntar(question))
+            if not detected_classes:
                 st.write("No se detectaron enfermedades en las rosas.") 
 
 
