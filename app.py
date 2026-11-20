@@ -126,7 +126,7 @@ with col2_1:
     with col22:
         if uploaded_image is not None:  
             st.download_button("Descargar imagen procesada", data=open(temp_img.name, "rb"), file_name="imagen_detectada.jpg")
-            st.write("Enfermedades detectadas en la foto:")
+            #st.write("Enfermedades detectadas en la foto:")
             #if detected_classes:
                 #counts = Counter(detected_classes)
                 #for cls, count in counts.items():
@@ -197,7 +197,7 @@ with col2:
                     data=file,
                     file_name="video_detectado.mp4",
                     mime="video/mp4") 
-            st.write("Enfermedades detectadas en el video:")
+            #st.write("Enfermedades detectadas en el video:")
             #if detected_classes:
             #    counts = Counter(detected_classes)
             #    for cls, count in counts.items():
